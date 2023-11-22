@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Dice Roller";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the Dice Roller</h1>
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <!-- Dice Settings Form -->
+    @model DiceSettings
+
+    <form class="dice-form" asp-action="Roll" asp-controller="RollDice" method="post">
+        <div>
+            <label asp-for="FavoredFaceDie1">Favored Face for Die 1:</label>
+            <input asp-for="FavoredFaceDie1" class="form-control" />
+            <span asp-validation-for="FavoredFaceDie1" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="FactorDie1">Factor for Die 1:</label>
+            <input asp-for="FactorDie1" class="form-control" />
+            <span asp-validation-for="FactorDie1" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="FavoredFaceDie2">Favored Face for Die 2:</label>
+            <input asp-for="FavoredFaceDie2" class="form-control" />
+            <span asp-validation-for="FavoredFaceDie2" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="FactorDie2">Factor for Die 2:</label>
+            <input asp-for="FactorDie2" class="form-control" />
+            <span asp-validation-for="FactorDie2" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="NumberOfRolls">Number of Rolls:</label>
+            <input asp-for="NumberOfRolls" class="form-control" />
+            <span asp-validation-for="NumberOfRolls" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Roll Dice</button>
+    </form>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+</div>

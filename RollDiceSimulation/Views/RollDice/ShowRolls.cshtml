@@ -1,0 +1,26 @@
+﻿@model DiceRollViewModel
+
+@{
+    ViewData["Title"] = "Dice Roll Results";
+}
+
+<div class="container">
+    <h2 class="text-center">Dice Roll Results</h2>
+
+    @foreach (var diceRoll in Model.DiceRolls!)
+    {
+        <div class="dice-roll">
+            <h3>Roll ID: @diceRoll.Id</h3>
+            <p>Number of Dice: @diceRoll.NumberOfDice</p>
+            <p>Results:</p>
+            <ul>
+                @foreach (var result in diceRoll.Results)
+                {
+                    <li>Result: @result.Result</li>
+                }
+            </ul>
+            <p>Total: @diceRoll.Total</p>
+        </div>
+        <hr />
+    }
+</div>

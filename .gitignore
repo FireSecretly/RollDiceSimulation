@@ -1,0 +1,11 @@
+﻿*.config
+*.vsidx
+*.suo
+RollDiceSimulationTests/bin/Debug/net7.0/CoverletSourceRootsMapping
+RollDiceSimulationTests/obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+RollDiceSimulationTests/obj/Debug/net7.0/RollDiceSimulationTests.AssemblyInfo.cs
+RollDiceSimulationTests/obj/Debug
+RollDiceSimulationTests/obj
+*.bin
+.vs
+.idea
